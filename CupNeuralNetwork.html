@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--<style>
+      img{ width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;}
+    </style>-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cupping Modeling: Neural Network Models</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+
+       
+    <div class="navigation">
+      <nav class="navbar navbar-expand-md navbar-light">
+     
+        <a class="navbar-brand" href="index.html">Coffeepedia!!</a>
+     
+   
+        <!-- Collapse button -->
+        <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Drop down -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="WhatisCupping.html">What is Cupping?</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Cupping Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="CupLinearModel.html">Linear Models</a>
+                <a class="dropdown-item" href="CupSVRModel.html">SVR Model</a>
+                <a class="dropdown-item" href="CupRandomForest.html">Random Forest Model</a>
+                <a class="dropdown-item" href="CupNeuralNetwork.html">Neural Network Model</a>
+                <a class="dropdown-item" href="CupAnalysis.html">Cupping Analysis</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Price Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="priceTrends.html">Price Trends</a>
+                <a class="dropdown-item" href="priceModel.html">Price Model</a>
+                <a class="dropdown-item" href="priceAnalysis.html">Price Analysis </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="whoarewe.html">Who We Are</a>
+            </li>
+  
+          </ul>
+          
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- Content Section -->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <!-- Left box  -->
+            <div class="box">
+              <h3 class="title">Neural Network Models</h3>
+              <hr>
+              <p>
+                The last models trained on our coffee quality data were two neural networks--deep and normal. We used a linear 
+                output activation and mean_squared_error and mean_absolute_error for our loss functions. The normal neural network 
+                performed with a final loss of about 12.26 and a mean absolute error of 2.39, which is an improvement from 3783.52 
+                and 54.11, respectively, on the initial epoch. After adding more hidden layers, the deep neural network performed 
+                with an even lower loss of 4.76 and mean absolute error of 1.43.
+              </p>
+              <h5>Normal Neural Network Model:</h5>
+              <img src="images/quality_normal_neural.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Normal neural network model">
+              <h5>Deep Neural Network Model:</h5>
+              <img src="images/quality_deep_neural.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Deep neural network model">
+              
+              <br>
+              <br>
+              
+              <p>
+                 Again, we plotted the predicted/actual scores for these two models on the same plot for comparison. We also added a 
+                 diagonal line (coeff=1) to show more clearly where the accurate predictions should lie. We found that while the two 
+                 models were similar, the deep neural network's outliers were closer to the diagonal line than the normal neural 
+                 network's outliers, indicating the predictions were more accurate for the deep network.
+              </p>
+              <img src="images/NNN_vs_DNN_predictions_vs_actuals.jpg" class="rounded " alt="Neural Network models">
+            </div>
+
+          </div>
+         
+        </div>
+    </div>
+      <!-- Footer Section -->
+    <footer>
+      <div class="footer">Copyright &copy; Jen Barny, Jaewon Kim, Rajitha Baddam, Preeti Chouksey 2020</div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--<style>
+      img{ width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;}
+    </style>-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Price Modeling--Linear Models</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+
+       
+    <div class="navigation">
+      <nav class="navbar navbar-expand-md navbar-light">
+     
+        <a class="navbar-brand" href="index.html">Coffeepedia!!</a>
+     
+   
+        <!-- Collapse button -->
+        <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Drop down -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="WhatisCupping.html">What is Cupping?</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Cupping Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="CupLinearModel.html">Linear Models</a>
+                <a class="dropdown-item" href="CupSVRModel.html">SVR Model</a>
+                <a class="dropdown-item" href="CupRandomForest.html">Random Forest Model</a>
+                <a class="dropdown-item" href="CupNeuralNetwork.html">Neural Network Model</a>
+                <a class="dropdown-item" href="CupAnalysis.html">Cupping Analysis</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Price Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="priceTrends.html">Price Trends</a>
+                <a class="dropdown-item" href="priceModel.html">Price Model</a>
+                <a class="dropdown-item" href="priceAnalysis.html">Price Analysis </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="whoarewe.html">Who We Are</a>
+            </li>
+  
+          </ul>
+          
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- Content Section -->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <!-- Left box  -->
+            <div class="box">
+              <h3 class="title">Price Modeling</h3>
+              <hr>
+              <p>
+                Before creating any models, we decided which feature to assign to our y values. We decided the most relevant feature
+                to predict would be the closing price, leaving opening, high and low prices to act as our X values. Plotting X and y 
+                returns a linear trend, suggesting linear modeling may be a good choice for this data.
+              </p>
+              <p>
+                Linear regression, Ridge regression, Lasso regression, ElasticNet regression, and Decision tree regression were selected 
+                to build models and predict the coffee stock prices. Each of these models returned an accuracy over 0.98, and when actual 
+                price and predicted price are plotted against each other it creates a linear graph. The noise in the graphs are so minute, it is negletable.
+              </p>
+              <img src="images/price_model_X,y Relationship.png" class="rounded " alt="X y Relationship">
+              <h3 class="title">The Models</h3>
+              <hr>
+              <p>
+                We trained four linear models on our data: Linear regression, Lasso, Ridge and Elasticnet.
+              </p>
+                <img src="images/price_1.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Price1">
+                <img src="images/price_2.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Price2">
+                <img src="images/price_3.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Price3">
+                <img src="images/price_4.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Price4">
+                <img src="images/price_5.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Price5">
+                <img src="images/price_6.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Price6">
+                <img src="images/price_7.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Price7">
+              
+              <br>
+              <br>
+              <p>
+                All the linear models performed quite well, all with over 99% accuracy, and did not require hyperparameter tuning.
+                Predicted scores for each model were plotted against actual scores using Matplotlib subplots to compare them side by side.
+              </p>
+              <br>
+              <img src="images/price_model_summary.png" class="rounded " alt="price summary">
+              <br>
+              <p>
+               <strong>Linear Regression</strong>
+                Training Score: 0.999334774319733
+                Testing Score: 0.9993508976652573
+              </p>
+              <p>
+                <strong>Ridge Regression</strong>
+                Training Score: 0.9993347742637629
+                Testing Score: 0.999350919688538
+              </p>
+              <p>
+                <strong>Decision Tree Modeling</strong>
+                Training Score: 0.999334774319733
+                Testing Score: 0.9993508976652573
+              </p>
+              <p>
+                <strong>Lasso Regression</strong>
+                Training Score: 0.9991080397239445
+                Testing Score: 0.9990758991317943
+              </p>
+              <p>
+                <strong>ElasticNet Regression</strong>
+                Training Score: 0.9991089719963556
+                Testing Score: 0.9990770983942867
+              </p>
+            </div>
+          </div>
+         
+        </div>
+    </div>
+      <!-- Footer Section -->
+    <footer>
+      <div class="footer">Copyright &copy; Jen Barny, Jaewon Kim, Rajitha Baddam, Preeti Chouksey 2020</div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+</body>
+</html>

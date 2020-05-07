@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--<style>
+      img{ width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;}
+    </style>-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cupping Modeling: Support Vector Models</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+    <div class="navigation">
+      <nav class="navbar navbar-expand-md navbar-light">
+     
+        <a class="navbar-brand" href="index.html">Coffeepedia!!</a>
+     
+   
+        <!-- Collapse button -->
+        <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Drop down -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="WhatisCupping.html">What is Cupping?</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Cupping Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="CupLinearModel.html">Linear Models</a>
+                <a class="dropdown-item" href="CupSVRModel.html">SVR Model</a>
+                <a class="dropdown-item" href="CupRandomForest.html">Random Forest Model</a>
+                <a class="dropdown-item" href="CupNeuralNetwork.html">Neural Network Model</a>
+                <a class="dropdown-item" href="CupAnalysis.html">Cupping Analysis</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Price Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="priceTrends.html">Price Trends</a>
+                <a class="dropdown-item" href="priceModel.html">Price Model</a>
+                <a class="dropdown-item" href="priceAnalysis.html">Price Analysis </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="whoarewe.html">Who We Are</a>
+            </li>
+  
+          </ul>
+          
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- Content Section -->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <!-- Left box  -->
+            <div class="box">
+              <h3 class="title">Support Vector Regression Model</h3>
+              <hr>
+              <p>We used Support Vector Regressor (SVR), a regressor, instead of Support Vector Classifier (SVC), a classifier, 
+                because our y values  were continuous integers not discrete classes. The initial testing and training scores were 
+                quite low, so we used GridSearchCV to retune the model parameters until the scores improved. Hyperparameter tuning 
+                was quite successful, as evidenced by the plot comparing predicted/actual scores for the untuned and retuned models.
+              </p>             
+              
+              <h5>Before Hyperparameter Tuning:</h5>
+              <img src="images/quality_svr1.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="SVR Model1">
+              <h5>After Hyperparameter Tuning:</h5>
+              <img src="images/quality_svr2.png" style="padding-left:80px; padding-right:80px;" alt="SVR Model2">
+              <img src="images/quality_svr3.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="SVR Model3">
+
+              <br><br>
+              <br>
+             <img src= "images/SVR_tuned_vs_untuned_predictions_vs_actuals.jpg" class="rounded" alt="SVR Model">
+            </div>
+          </div>
+         
+        </div>
+    </div>
+      <!-- Footer Section -->
+    <footer>
+      <div class="footer">Copyright &copy; Jen Barny, Jaewon Kim, Rajitha Baddam, Preeti Chouksey 2020</div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+</body>
+</html>

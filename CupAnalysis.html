@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--<style>
+      img{ width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;}
+    </style>-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is "Cupping"?</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+
+       
+    <div class="navigation">
+      <nav class="navbar navbar-expand-md navbar-light">
+     
+        <a class="navbar-brand" href="index.html">Coffeepedia!!</a>
+     
+   
+        <!-- Collapse button -->
+        <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Drop down -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="WhatisCupping.html">What is Cupping?</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Cupping Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="CupLinearModel.html">Linear Models</a>
+                <a class="dropdown-item" href="CupSVRModel.html">SVR Model</a>
+                <a class="dropdown-item" href="CupRandomForest.html">Random Forest Model</a>
+                <a class="dropdown-item" href="CupNeuralNetwork.html">Neural Network Model</a>
+                <a class="dropdown-item" href="CupAnalysis.html">Cupping Analysis</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Price Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="priceTrends.html">Price Trends</a>
+                <a class="dropdown-item" href="priceModel.html">Price Model</a>
+                <a class="dropdown-item" href="priceAnalysis.html">Price Analysis </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="whoarewe.html">Who We Are</a>
+            </li>
+  
+          </ul>
+          
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- Content Section -->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <!-- Left box  -->
+            <div class="box">
+              <h3 class="title">Cupping Analysis</h3>
+              <hr>
+              <div class="row">
+                <p>
+                  Here we have plotted the actual vs. predicted coffee quality scores for each model, all on the same scale for comparison.
+                  It appears that the linear and support vector regression models produced the most accurate predictions.
+                </p>
+                <img src="images/quality_model_comparison.jpg" class="rounded " alt="Quality Model Comparision">
+              </div>
+
+              <div class="row">
+              <p>
+                When we calculate the percent error for the predictions, we get an even clearer picture of the accuracy—the elasticnet 
+                and support vector regression (SVR) models have an error closest to zero. The random forest and neural network models 
+                clearly did not perform as well, with much higher (though still barely less than -.15%) percent error. If we remove 
+                the worst performing models from the chart, we can see the differences between the other models in slightly greater 
+                detail. The elasticnet and SVR models, however, still appear to have performed with similar accuracy.
+                <div class="col-lg-6">
+                  <img src="images/quality_model_ppe.jpg" class="rounded " alt="Quality Model Plot Percent Error">
+                </div>
+                <div class="col-lg-6">
+                  <img src="images/quality_model_ppe_no_neural_networks.jpg" class="rounded " alt="Quality Model Plot Percent Error">
+                </div>
+              </div>
+
+              <div class="row">
+                <p>
+                  We can also see that the R2 scores for the linear models are higher than the other models, surprisingly including SVR.
+                </p>
+                <img src="images/quality_model_r2.jpg" class="rounded " alt="Quality Model R2 Score">
+              </div>
+  
+              <div class="row">
+                <p>
+                  At face value it appears the models with R2 scores close to 1 are the most accurate at predicting coffee quality scores, 
+                  but we must also examine the residual plots to be sure. Residuals represent the difference between predicted and actual 
+                  values. The closer they are to 0, the more accurate the model’s predictions are. Here we confirm that the linear models 
+                  provided the most accurate predictions for coffee quality. 
+                  
+                </p>
+                <img src="images/quality_residual_plots.jpg" class="rounded " alt="Quality Model R2 Score">
+
+                <p>
+                  Again, if we remove the neural networks from the comparison and rescale the charts to display the residuals 
+                  with even more granularity, it is revealed that the elasticnet model had the smallest variance between actual 
+                  and predicted scores.
+                </p>
+                <img src="images/quality_residual_plots_no_neural_networks.jpg" class="rounded " alt="Quality Model R2 Score">
+                <p>
+                  This combined with the model's high R2 score suggests that the <strong>ElasticNet</strong> model predicted 
+                  coffee quality scores with the greatest accuracy.
+                </p>
+              </div>
+
+            </div>
+          </div>
+         
+        </div>
+    </div>
+      <!-- Footer Section -->
+    <footer>
+      <div class="footer">Copyright &copy; Jen Barny, Jaewon Kim, Rajitha Baddam, Preeti Chouksey 2020</div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+</body>
+</html>

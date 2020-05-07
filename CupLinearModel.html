@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--<style>
+      img{ width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;}
+    </style>-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cupping Modeling: Linear Models</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+
+    <div class="navigation">
+      <nav class="navbar navbar-expand-md navbar-light">
+     
+        <a class="navbar-brand" href="index.html">Coffeepedia!!</a>
+     
+   
+        <!-- Collapse button -->
+        <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Drop down -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="WhatisCupping.html">What is Cupping?</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Cupping Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="CupLinearModel.html">Linear Models</a>
+                <a class="dropdown-item" href="CupSVRModel.html">SVR Model</a>
+                <a class="dropdown-item" href="CupRandomForest.html">Random Forest Model</a>
+                <a class="dropdown-item" href="CupNeuralNetwork.html">Neural Network Model</a>
+                <a class="dropdown-item" href="CupAnalysis.html">Cupping Analysis</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Price Modeling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="priceTrends.html">Price Trends</a>
+                <a class="dropdown-item" href="priceModel.html">Price Model</a>
+                <a class="dropdown-item" href="priceAnalysis.html">Price Analysis </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="whoarewe.html">Who We Are</a>
+            </li>
+  
+          </ul>
+          
+        </div>
+      </nav>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container">
+      <div class="box">
+        <h3 class="title">Linear Models</h3>
+        <hr>
+        <h5>First, a bit about our data...</h5>
+        <br>
+        <p>
+          We used several machine learning models from the Scikit-Learn, Tensorflow and Keras libraries to predict 
+          coffee quality scores based on several attributes as defined by the Coffee Quality Institute.
+        </p>
+        
+        <p>
+          Before modeling, we determined which columns will be our X and y values. Because we are predicting quality 
+          based on coffee attributes, we decided our y value would be Total Cup Points (basically, the total coffee score) 
+          and our X values would be everything else--all grading criteria as well as a few other descriptive attributes.
+          We initially inspected our data by plotting each numerical feature against the Total Cup Points to determine which 
+          models to try. We found the data appeared to be largely linear, so naturally the first models we tried were linear.
+        </p>
+        <img src="images/initial_features_vs_total_score.jpg" class="rounded " alt="Feature Comparision">
+        <p>
+          Because some of our X values were categorical in nature (country of origin, farm region, farm owner, farm name, and 
+          processing method), we encoded X using Ordinal Encoder before splitting our data into training and testing sets. 
+          This method retained all values in a single column and assigned an integer to each unique string, rather than using 
+          binary encoding to create two dummy boolean columns for each unique value. We then split the data into training (80%) 
+          and testing (20%) sets.
+        </p>
+        <img src="images/quality_preprocessing.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Preprocessing">
+
+      </div>
+
+        <div class="col-lg-12 col-md-12">
+          <div class="box">
+            <h3 class="title">The Models</h3>
+            <hr>
+            <p>
+              We trained four linear models on our data: Linear regression, Lasso, Ridge and ElasticNet.
+              <img src="images/quality_linear_regression.png" style="padding-left:80px; padding-right:80px;"class="rounded " alt="Cup Linear regression Model">
+              <img src="images/quality_lasso.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Cup Lasso Model">
+              <img src="images/quality_ridge.png" style="padding-left:80px; padding-right:80px;" alt="Cup ridge Model">
+              <img src="images/quality_elasticnet.png" style="padding-left:80px; padding-right:80px;" class="rounded " alt="Cup Linear Model">
+            </p>
+            <br>
+            <p>All the linear models performed quite well, all with over 99% accuracy, and did not require hyperparameter tuning.
+               Predicted scores for each model were plotted against actual scores using Matplotlib subplots to compare them side by side.
+            </p>
+            <br>
+            <img src="images/linear_models_prediction_vs_actual.jpg" class="rounded " alt="Cup Linear Model">
+           
+          </div>
+        </div>
+       
+  </div>
+      <!-- Footer Section -->
+    <footer>
+      <div class="footer">Copyright &copy; Jen Barny, Jaewon Kim, Rajitha Baddam, Preeti Chouksey 2020</div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+</body>
+</html>

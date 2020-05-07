@@ -1,0 +1,21 @@
+This database contains information of lawn mowers. 
+
+Linear Regression
+Training Score: 0.999334774319733
+Testing Score: 0.9993508976652573
+
+Ridge Regression
+Training Score: 0.9993347742637629
+Testing Score: 0.999350919688538
+
+Decision Tree Modeling
+Training Score: 0.999334774319733
+Testing Score: 0.9993508976652573
+
+Lasso Regression
+Training Score: 0.9991080397239445
+Testing Score: 0.9990758991317943
+
+ElasticNet Regression
+Training Score: 0.9991089719963556
+Testing Score: 0.9990770983942867
